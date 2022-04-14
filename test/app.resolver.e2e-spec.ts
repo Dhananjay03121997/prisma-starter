@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { Chance } from 'chance';
-import { AppModule } from 'src/app.module';
+import { AppModule } from '../src/app.module';
 
 const chance = new Chance();
 
@@ -23,7 +23,7 @@ describe('AppResolver (e2e)', () => {
     return request(app.getHttpServer())
       .post('/graphql')
       .send({
-        query: '{ helloWorld }',
+        query: 'Query{ helloWorld }',
       })
       .expect(200);
   });
@@ -33,7 +33,7 @@ describe('AppResolver (e2e)', () => {
     return request(app.getHttpServer())
       .post('/graphql')
       .send({
-        query: `{ hello(name: "${name}") }`,
+        query: `Query{ hello(name: "${name}") }`,
       })
       .expect(200);
   });

@@ -1,6 +1,6 @@
 import { Resolver, Query, Args } from '@nestjs/graphql';
 
-@Resolver()
+@Resolver(() => String)
 export class AppResolver {
   @Query(() => String)
   helloWorld(): string {

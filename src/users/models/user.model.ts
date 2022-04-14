@@ -4,8 +4,8 @@ import {
   HideField,
   Field,
 } from '@nestjs/graphql';
-import { Post } from 'src/posts/models/post.model';
-import { BaseModel } from 'src/common/models/base.model';
+import { Post } from '../../posts/models/post.model';
+import { BaseModel } from '../../common/models/base.model';
 import { Role } from '@prisma/client';
 
 registerEnumType(Role, {
